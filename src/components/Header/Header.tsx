@@ -27,6 +27,8 @@ import {
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
+import Image from "next/image";
+import logo from "../../../public/image/logo.png";
 
 const products = [
   {
@@ -121,9 +123,11 @@ const Header = () => {
         <div className="flex lg:flex-1 justify-center ">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="https://www.vidyalankar.org/assets/img/logo.png"
+            <Image
+              alt="Vidyalankar Logo"
+              src={logo.src}
+              width={200}
+              height={112}
               className="lg:h-28 h-20 w-auto absolute sm:relative top-0 fadeInLeft"
             />
           </a>
@@ -158,16 +162,19 @@ const Header = () => {
           >
             <div className="p-5">
               <p className="text-center text-xl font-bold pb-10">
-                "Are you aspiring to crack the GATE exam in 2025? For Electrical
-                Engineering or Mechanical Engineering, GATE Infinite brings you
-                a program that offers Flexibility, quality teaching & access to
-                top-notch resources."
+                &quot;Are you aspiring to crack the GATE exam in 2025? For
+                Electrical Engineering or Mechanical Engineering, GATE Infinite
+                brings you a program that offers Flexibility, quality teaching
+                &amp; access to top-notch resources.&quot;
               </p>
               <div className="text-center">
-                <a  href="https://wa.me/919867356907">
-                <button onClick={handleCancel} className="text-base font-bold bg-red-500 hover:bg-red-600 rounded-lg px-6 py-3 text-white">
-                  Contact Now
-                </button>
+                <a href="https://wa.me/919867356907">
+                  <button
+                    onClick={handleCancel}
+                    className="text-base font-bold bg-red-500 hover:bg-red-600 rounded-lg px-6 py-3 text-white"
+                  >
+                    Contact Now
+                  </button>
                 </a>
               </div>
             </div>

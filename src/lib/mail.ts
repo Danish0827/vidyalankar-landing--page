@@ -30,25 +30,21 @@ export async function sendmail({
 
   try {
     // Verify transporter connection
-    const testResult = await transporter.verify();
-    // console.log("Transporter verified:", testResult);
+    await transporter.verify();
   } catch (error) {
-    // console.error("Error verifying transporter:", error);
     return { success: false, error: "Transporter verification failed" };
   }
 
   try {
     // Send email
-    const sendResult = await transporter.sendMail({
+    await transporter.sendMail({
       from: '"Vidyalankar" <s.danish0827@gmail.com>',
       to,
       subject,
       html: body,
     });
-    // console.log("Email sent:", sendResult);
     return { success: true };
   } catch (error) {
-    // console.error("Error sending email:", error);
     return { success: false, error: "Email sending failed" };
   }
 }
